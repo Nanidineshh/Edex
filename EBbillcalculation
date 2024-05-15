@@ -1,0 +1,42 @@
+package dynamic;
+
+import java.util.Scanner;
+
+public class Ebbill {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		   Scanner sc = new Scanner(System.in);
+		   System.out.println("Enter the userName:");
+		   
+		   String userName = sc.next();
+		   System.out.println("Enter the consumed units:");
+		   
+		   int consumedUnits  = sc.nextInt();
+		
+		  System.out.println("The calculated bill is :\n");
+		  System.out.println("Username :"+userName +"\nBillamount :"+calculateEb(consumedUnits));
+		  
+		
+
+	}
+	public static int calculateEb(int units) {
+		
+		int sum =0;
+		int val = units/100;
+		int rem = units%100;
+		int cal = val;
+		
+		 while(val>0) {
+			 sum += val*100;
+			 val--; 
+		 }
+		 sum += rem*(cal+1);
+		
+		
+		  return sum;
+		
+	}
+
+}
